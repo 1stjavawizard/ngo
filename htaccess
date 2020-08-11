@@ -1,0 +1,25 @@
+Options +FollowSymLinks
+Options -MultiViews
+IndexIgnore */*
+
+
+RewriteEngine On
+
+
+# Unless directory, remove trailing slash
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+
+
+# Resolve .php file for extensionless php urls
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
+
+
+
+
+  
